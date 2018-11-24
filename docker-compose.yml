@@ -9,10 +9,10 @@ services:
     networks:
       - dockernet
     environment:
-      POSTGRES_USER:  matt
-      POSTGRES_PASSWORD_FILE:
-        - ./db/secrets/password:/run/secrets/postgres-passwrd
-      POSTGRES_DB: kinect-db
+      POSTGRES_USER: ${USER}
+      POSTGRES_PASSWORD: ${PASSWORD}
+      PGDATA: ${DATA}
+      POSTGRES_DB: ${DATABASE}
 volumes:
   data-volume:
 networks:
